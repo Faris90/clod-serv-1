@@ -20,7 +20,7 @@ function writeFile (file, data) {
 fs.mkdir(path.resolve(__dirname, './cloud-vars/'), () => {})
 
 const WebSocket = require('ws')
-const wss = new WebSocket.Server({ port: 3000 })
+const wss = new WebSocket.Server({ port: process.env.PORT || 3000 })
 
 const projects = new Map()
 const validProjectId = /^\w+$/
